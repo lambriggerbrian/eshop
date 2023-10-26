@@ -1,0 +1,26 @@
+.checkout {
+    display: flex;
+    margin: 15px;
+}
+
+.checkout__left {
+    width: 70%;
+}
+
+.checkout__ad {
+    width: 100%;
+}
+
+.checkout__right {
+    width: 30%;
+    padding: 0 5px;
+}
+
+.checkout__total {
+    background-color: darkgray;
+    padding: 15px;
+}
+
+.checkout__button {
+    width: 100%;
+}

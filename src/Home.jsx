@@ -1,6 +1,6 @@
 import React from "react";
-import Product from "./Product";
 import { getDummy } from "./Mockup";
+import Product from "./Product";
 
 import "./Home.css";
 
@@ -15,7 +15,7 @@ function Home() {
             className="home__image"
           />
           <div className="home__row">
-            <Product />
+            <Product title="Different Title" rating={3} />
             <Product />
           </div>
           <div className="home__row">
