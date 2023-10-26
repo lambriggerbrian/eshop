@@ -17,8 +17,14 @@
 }
 
 .checkout__total {
-    background-color: darkgray;
     padding: 15px;
+}
+
+.checkout_formGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .checkout__button {

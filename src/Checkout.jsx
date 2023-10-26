@@ -4,6 +4,7 @@ import {
   Checkbox,
   FormControlLabel,
   FormGroup,
+  Typography,
 } from "@mui/material";
 import React from "react";
 import CheckoutProduct from "./CheckoutProduct";
@@ -26,7 +27,7 @@ function Checkout({ items = DUMMY_BASKET }) {
     <div className="checkout">
       <div className="checkout__left">
         <img
-          src={getDummy(800, 150, "fff")}
+          src={getDummy(800, 100, "fff")}
           alt="Checkout Ad"
           className="checkout__ad"
         />
@@ -45,23 +46,19 @@ function Checkout({ items = DUMMY_BASKET }) {
       </div>
       <div className="checkout__right">
         <Card className="checkout__total">
-          <span>
+          <Typography variant="body1">
             Subtotal ({items.length} items): <small>$</small>
             <strong>{items.reduce(cartSum, 0).toFixed(2)}</strong>
-          </span>
-          <FormGroup>
+          </Typography>
+          <FormGroup className="checkout__formGroup">
             <FormControlLabel
               control={<Checkbox />}
               label="This order is a gift"
             />
-            <FormControlLabel
-              control={
-                <Button variant="contained" className="checkout__button">
-                  Proceed to Checkout
-                </Button>
-              }
-            ></FormControlLabel>
           </FormGroup>
+          <Button variant="contained" fullWidth>
+            Proceed to Checkout
+          </Button>
         </Card>
       </div>
     </div>

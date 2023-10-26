@@ -1,4 +1,13 @@
-import { ThemeProvider, createTheme } from "@mui/material";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import {
+  Container,
+  CssBaseline,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import Checkout from "./Checkout";
@@ -11,21 +20,27 @@ const theme = createTheme({
     primary: {
       main: "#ff9f00",
     },
+    background: {
+      default: "#eaeded",
+    },
   },
 });
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <div className="App">
-          <Header />
-          <Routes>
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </div>
-      </Router>
+      <Container disableGutters>
+        <CssBaseline />
+        <Router>
+          <div className="App">
+            <Header />
+            <Routes>
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
+        </Router>
+      </Container>
     </ThemeProvider>
   );
 }

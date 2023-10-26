@@ -1,7 +1,7 @@
 import React from "react";
 import { getDummy } from "./Mockup";
 
-import { Button } from "@mui/material";
+import { Button, Card } from "@mui/material";
 import "./CheckoutProduct.css";
 
 function CheckoutProduct({
@@ -11,22 +11,24 @@ function CheckoutProduct({
   image = getDummy(300, 200, "fff"),
 }) {
   return (
-    <div className="checkoutProduct">
-      <img src={image} alt="Product Image" />
-      <div className="checkoutProduct__info">
-        <strong>{title}</strong>
-        <p className="checkoutProduct__price">
-          <small>$</small>
-          <strong>{price}</strong>
-        </p>
-        <div className="checkoutProduct__rating">
-          <span>{"⭐".repeat(rating)}</span>
+    <Card sx={{ margin: "10px" }}>
+      <div className="checkoutProduct">
+        <img src={image} alt="Product Image" />
+        <div className="checkoutProduct__info">
+          <strong>{title}</strong>
+          <p className="checkoutProduct__price">
+            <small>$</small>
+            <strong>{price}</strong>
+          </p>
+          <div className="checkoutProduct__rating">
+            <span>{"⭐".repeat(rating)}</span>
+          </div>
+          <Button variant="contained" size="small" disableElevation>
+            Remove From Basket
+          </Button>
         </div>
-        <Button variant="contained" size="small" disableElevation>
-          Remove From Basket
-        </Button>
       </div>
-    </div>
+    </Card>
   );
 }
 
